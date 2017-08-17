@@ -1,0 +1,10 @@
+FROM alpine
+
+RUN apk add --no-cache aria2
+
+VOLUME /home
+WORKDIR /home
+
+EXPOSE 6800
+
+CMD aria2c  --enable-rpc --rpc-allow-origin-all --disable-ipv6 --rpc-listen-all

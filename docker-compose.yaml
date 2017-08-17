@@ -1,0 +1,15 @@
+version: "2"
+services:
+  aria2:
+    build: ./aria2
+    volumes:
+      - ./data:/home
+  ariang:
+    build: ./ariang
+    links:
+      - aria2
+    volumes:
+      - ./ariang/aria2_backend.conf:/etc/nginx/conf.d/aria2_backend.conf:ro
+    ports:
+      # - 80:80
+      - 6800:6800

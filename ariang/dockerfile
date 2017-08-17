@@ -1,0 +1,14 @@
+FROM nginx:alpine
+
+WORKDIR /usr/share/nginx
+
+RUN apk add --update --no-cache openssl
+
+RUN rm -rf html
+
+RUN wget https://github.com/mayswind/AriaNg-DailyBuild/archive/master.zip -O tmp.zip; unzip tmp.zip; rm tmp.zip; mv * html
+
+EXPOSE 80
+EXPOSE 6800
+
+CMD nginx -g "daemon off;"
