@@ -2,9 +2,9 @@ FROM alpine
 
 RUN apk add --no-cache aria2
 
-VOLUME /home
-WORKDIR /home
+VOLUME /home/aria2
+WORKDIR /home/aria2
 
 EXPOSE 6800
 
-CMD aria2c  --enable-rpc --rpc-allow-origin-all --disable-ipv6 --rpc-listen-all
+CMD aria2c -d /home/aria2/torrents --bt-metadata-only=true --bt-save-metadata=true --enable-rpc --rpc-allow-origin-all --disable-ipv6 --rpc-listen-all

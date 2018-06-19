@@ -5,11 +5,4 @@
 ```bash
 docker-compose up
 ```
-
-access http://localhost:6800
-
-## Custom port
-
-Feel free to change the port in docker-compose.yaml.
-
-Then update the Aria2 RPC address in http://localhost/#!/settings/ariang
+open http://[your-domian]:8080/#!/settings/ariang and set the rpc host to [your-domain].

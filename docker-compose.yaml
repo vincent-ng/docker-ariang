@@ -11,5 +11,4 @@ services:
     volumes:
       - ./ariang/aria2_backend.conf:/etc/nginx/conf.d/aria2_backend.conf:ro
     ports:
-      # - 80:80
-      - 6800:6800
+      - 8080:8080
